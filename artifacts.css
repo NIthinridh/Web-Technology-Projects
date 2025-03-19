@@ -1,0 +1,126 @@
+/* 
+Student Name: Nithin Ravi
+Student Number: 8938129
+Assignment: PROG8570 Project - Glass Beams Fan Site
+Date: February 8, 2025
+*/
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.product-card {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: none;
+    border-radius: 8px 8px 0 0;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4em;
+    color: #fff;
+}
+
+.product-description {
+    color: #999;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.price-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 1.2em;
+    color: #a98fff;
+    font-weight: 600;
+}
+
+.buy-button {
+    background-color: #a98fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #8a6eff;
+}
+
+.buy-button:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Shipping Info Styles */
+.shipping-info {
+    background: #111;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.shipping-info h3 {
+    color: #a98fff;
+    margin-top: 0;
+}
+
+.shipping-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.shipping-info li {
+    color: #999;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.shipping-info li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #a98fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-card {
+        max-width: 100%;
+    }
+}

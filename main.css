@@ -1,0 +1,223 @@
+/* 
+Student Name: Nithin
+Student Number: 8938129
+Assignment: PROG8570 Project - Glass Beams Fan Site
+Date: February 8, 2025
+*/
+
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #edecd5;
+    color: #000000;
+}
+
+/* Container */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Navigation Styles */
+.thumbnail-nav {
+    width: 150px;
+    background-color: #edecd5;
+    padding: 20px;
+    border-right: 10px solid #747472;
+}
+
+.nav-item {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.nav-item img {
+    width: 200px;
+    height: 100px;
+    border: 5px solid #747472;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+}
+
+.nav-item:hover img {
+    opacity: 0.8;
+}
+
+.caption {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8em;
+    color: #000000;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    max-width: calc(100% - 120px);
+}
+
+.site-title {
+    text-align: center;
+    font-size: 5em;
+    margin-top: 10px;
+    height: 80px;
+}
+
+/* Main Navigation */
+.main-nav {
+    margin: 30px 0;
+    
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+}
+
+.main-nav a {
+    color: #000000;
+    font-size: 30px;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #ffffff;
+}
+
+.main-nav a:focus {
+    outline: 2px solid #edecd5;
+    outline-offset: 10px;
+}
+
+/* Submenu */
+.has-submenu {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #edecd5;
+    border: 1px solid #333;
+    padding: 10px;
+    min-width: 150px;
+    opacity: 0;  /* Start with 0 opacity */
+    visibility: hidden;  /* Hide it completely */
+    transition: opacity 0.3s ease, visibility 0.3s ease; 
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+    opacity: 1;
+    visibility: visible
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+.submenu a:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Content Layout */
+.content-wrapper {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.main-article {
+    flex: 3;
+}
+
+.sidebar {
+    flex: 1;
+    margin-top: 30px;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: 500px;
+    border: 2px solid #333;
+    border-radius: 4px;
+}
+
+.hero-image {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Typography */
+h2 {
+    margin: 30px 0 15px;
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.4em;
+    margin: 20px 0 10px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    border-top: 1px solid #333;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .submenu {
+        position: static;
+        background: none;
+        border: none;
+    }
+}
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+/* Making the logo circular */
+.logo-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;  
+    object-fit: cover;
+}
+/* Remove default margin from h1 */
+.site-title {
+    margin: 0;  
+}

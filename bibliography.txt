@@ -1,0 +1,40 @@
+Bibliography and Resources
+ 
+Student Name: Nithin Ravi
+Student Number: 8938129
+Assignment: PROG8570 Project - Glass Beams Fan Site
+Date: February 8, 2025
+
+
+Image Credits:
+- Logo image : Source: https://glassbeams.bandcamp.com/album/mahal
+- Hero image (content.jpg): Source: https://www.dailysabah.com/arts/music/glass-beams-to-bring-hypnotic-sounds-back-to-istanbul-in-2025, Photographer: [Name], License: Free to use
+- Album artwork: Created using Adobe Photoshop, Original work
+- Navigation thumbnails: sources:https://glassbeams.bandcamp.com/album/mahal, https://www.dailysabah.com/arts/music/glass-beams-to-bring-hypnotic-sounds-back-to-istanbul-in-2025, https://rollingstoneindia.com/glass-beams-india-interview-rajan-silva/, https://powerline-agency.com/artists/glass-beams/
+- Product images: Source: Created using Adobe Photoshop, Original work
+
+
+Fonts
+1. Space Grotesk
+   Source: Google Fonts
+   Designer: Florian Karsten
+   License: Open Font License
+   URL: https://fonts.google.com/specimen/Space+Grotesk
+
+CSS Resources
+1. normalize.css v8.0.1
+   Source: github.com/necolas/normalize.css
+   License: MIT
+   Retrieved: February 2025
+
+Design Inspiration
+1. Modern Music Artist Websites
+   - Reference for dark theme and minimalist layout
+   - Inspiration for responsive navigation design
+
+2. E-commerce Platforms
+   - Reference for product grid layout
+   - Inspiration for purchase button design
+
+
+

@@ -1,0 +1,151 @@
+/* 
+Student Name: Nithin
+Student Number: 8938129
+Assignment: PROG8570 Project - Glass Beams Fan Site
+Date: February 8, 2025
+*/
+
+/* Album Grid Styles */
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 5px;
+}
+
+.album-card {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.album-card:hover {
+    transform: translateY(-5px);
+}
+
+.album-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border: none;
+    border-radius: 8px 8px 0 0;
+}
+
+.album-info {
+    padding: 20px;
+}
+
+.album-info h3 {
+    margin: 0 0 5px 0;
+    color: #fff;
+}
+.album-info h2 {
+    margin: 0 0 5px 0;
+    color: #000000;
+}
+
+.release-date {
+    color: #a98fff;
+    font-size: 0.9em;
+    margin: 0 0 10px 0;
+}
+
+.album-description {
+    color: #ffffff;
+    font-size: 0.95em;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Singles List Styles */
+.singles-list {
+    margin: 20px 0;
+}
+
+.single-item {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.single-item:hover {
+    transform: translateX(5px);
+}
+
+.single-item h3 {
+    margin: 0 0 5px 0;
+    color: #fff;
+}
+
+.track-info {
+    color: #999;
+    font-size: 0.9em;
+    margin: 5px 0 0 0;
+}
+
+/* Latest Release Sidebar */
+.latest-release {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.release-highlight {
+    text-align: center;
+}
+
+.release-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    
+}
+
+.release-highlight h4 {
+    color: #fff;
+    margin: 10px 0 5px;
+}
+
+.release-highlight p {
+    color: #a98fff;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Section Headers */
+.music-section h2 {
+    color: #fff;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .album-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .release-image {
+        max-width: 100%;
+    }
+}
+.music-section h2 {
+    color: #000000;  
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-weight: 600;
+}

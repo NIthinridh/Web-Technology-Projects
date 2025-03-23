@@ -1,0 +1,622 @@
+/* Base Styles & Global Settings */
+:root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-color: #ffffff;
+    --muted-text: rgba(255, 255, 255, 0.7);
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+    --font-family: 'Helvetica Neue', Arial, sans-serif;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+/* Reset & Global Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+html {
+    font-size: calc(0.5rem + 0.417vw); /* Responsive font sizing */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Global Layout Classes */
+.global-padding {
+    padding: 0 var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
+}
+
+/* Make text look crisper and more legible in all browsers */
+.body-new {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Fix for content visibility - ensure content is visible by default */
+.hero-content,
+.hero-content-grid,
+.hero-name-wrapper,
+.about-columns-container,
+#profile-wrapper,
+#portfolio-link {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Page Loader Styles */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader_progress-wrapper {
+    width: 80%;
+    max-width: 600px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: var(--spacing-md);
+}
+
+.loader_progress {
+    height: 100%;
+    width: 0%;
+    background-color: var(--text-color);
+}
+
+.loader_text {
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent-color);
+    transition: opacity 0.3s ease;
+}
+
+/* Add loading messages for different stages */
+.loader_text[data-stage="1"]::after {
+    content: "Initializing...";
+}
+.loader_text[data-stage="2"]::after {
+    content: "Loading Content...";
+}
+.loader_text[data-stage="3"]::after {
+    content: "Preparing Portfolio...";
+}
+.loader_text[data-stage="4"]::after {
+    content: "Unpacking Skills...";
+}
+
+.loader_number {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    min-height: 100vh;
+    position: relative;
+    padding-top: 0;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: var(--spacing-xl);
+}
+
+.hero-content-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: var(--spacing-lg);
+    will-change: transform, opacity;
+}
+
+/* Three-column layout */
+.left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-right: var(--spacing-lg);
+}
+
+.center-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Move the profile photo more toward the vertical center */
+    margin-top: 5vh;
+}
+
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: var(--spacing-lg);
+}
+
+/* Profile Picture Styles - Rectangular Version */
+.profile-picture-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 240px;
+    height: 320px; /* Increased height for a more rectangular shape */
+    border-radius: 8px; /* Slight rounding on corners instead of full circle */
+    overflow: hidden;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures the image fills the container properly */
+}
+
+/* Intro Text */
+.intro-text-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+/* Skills Section */
+.hero-service-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.skills-row {
+    display: flex;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-service {
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-service > div:first-child {
+    font-weight: bold;
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero-service-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    opacity: 0.7;
+}
+
+/* Stained Glass Effect Base Styles */
+.stained-glass-effect {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+/* The main colorful mosaic background effect */
+.stained-glass-effect::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(45deg, rgba(255, 0, 0, 0) 0%, rgba(255, 0, 0, 0.8) 100%),
+        linear-gradient(135deg, rgba(0, 255, 255, 0) 0%, rgba(0, 255, 255, 0.8) 100%),
+        linear-gradient(225deg, rgba(255, 255, 0, 0) 0%, rgba(255, 255, 0, 0.8) 100%),
+        linear-gradient(315deg, rgba(0, 0, 255, 0) 0%, rgba(0, 0, 255, 0.8) 100%);
+    background-size: 200% 200%;
+    background-position: 0 0;
+    mix-blend-mode: color-dodge;
+    opacity: 1;
+    z-index: -1;
+    transition: opacity 0.5s ease, background-position 0.5s ease;
+}
+
+/* The stained glass fracture pattern overlay */
+.stained-glass-effect::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M25,30 L40,70 L70,60 L65,20z' fill='none' stroke='rgba(255,255,255,0.8)' stroke-width='0.5'/%3E%3Cpath d='M40,20 L80,30 L70,80 L30,65z' fill='none' stroke='rgba(255,255,255,0.8)' stroke-width='0.5'/%3E%3Cpath d='M60,10 L75,30 L45,60 L30,40z' fill='none' stroke='rgba(255,255,255,0.8)' stroke-width='0.5'/%3E%3C/svg%3E");
+    background-size: 60px 60px;
+    background-repeat: repeat;
+    -webkit-mask-image: 
+        repeating-conic-gradient(
+            from 0deg at var(--mouse-x) var(--mouse-y),
+            rgba(255, 0, 0, 0.4) 0deg 60deg,
+            rgba(0, 255, 255, 0.4) 60deg 120deg,
+            rgba(255, 255, 0, 0.4) 120deg 180deg,
+            rgba(0, 0, 255, 0.4) 180deg 240deg,
+            rgba(255, 0, 255, 0.4) 240deg 300deg,
+            rgba(0, 255, 0, 0.4) 300deg 360deg
+        );
+    -webkit-mask-size: 30% 30%;
+    mask-image: 
+        repeating-conic-gradient(
+            from 0deg at var(--mouse-x) var(--mouse-y),
+            rgba(255, 0, 0, 0.4) 0deg 60deg,
+            rgba(0, 255, 255, 0.4) 60deg 120deg,
+            rgba(255, 255, 0, 0.4) 120deg 180deg,
+            rgba(0, 0, 255, 0.4) 180deg 240deg,
+            rgba(255, 0, 255, 0.4) 240deg 300deg,
+            rgba(0, 255, 0, 0.4) 300deg 360deg
+        );
+    mask-size: 30% 30%;
+    opacity: 0;
+    mix-blend-mode: overlay;
+    z-index: -1;
+    transition: opacity 0.5s ease;
+}
+
+/* Hover state for stained glass effect */
+.stained-glass-effect:hover::before {
+    opacity: 1;
+    background-position: 100% 100%;
+    animation: shine 3s infinite;
+}
+
+.stained-glass-effect:hover::after {
+    opacity: 0.8;
+    animation: mosaic-move 8s linear infinite;
+}
+
+/* Animations for the stained glass effect */
+@keyframes shine {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+@keyframes mosaic-move {
+    0% {
+        -webkit-mask-position: 0% 0%;
+        mask-position: 0% 0%;
+    }
+    25% {
+        -webkit-mask-position: 100% 0%;
+        mask-position: 100% 0%;
+    }
+    50% {
+        -webkit-mask-position: 100% 100%;
+        mask-position: 100% 100%;
+    }
+    75% {
+        -webkit-mask-position: 0% 100%;
+        mask-position: 0% 100%;
+    }
+    100% {
+        -webkit-mask-position: 0% 0%;
+        mask-position: 0% 0%;
+    }
+}
+
+.text-link {
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    margin-top: var(--spacing-md);
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--text-color);
+    transition: all 0.4s ease;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.text-link:hover {
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    border-color: transparent;
+}
+
+.hero-name-wrapper {
+    padding-bottom: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+    will-change: transform, opacity;
+}
+
+.hero-name {
+    font-size: 9vw;
+    font-weight: 700;
+    line-height: 0.9;
+}
+
+/* Spacer Elements for Scroll Animations */
+.hero-spacer, .end-spacer {
+    height: 30vh;
+    pointer-events: none;
+}
+
+/* Experience Section Styles */
+.experience-section {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    min-height: 80vh;
+}
+
+.section-title-wrapper {
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.experience-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.experience-item {
+    display: flex;
+    gap: var(--spacing-xl);
+}
+
+.experience-year {
+    flex: 0 0 150px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-top: 5px;
+}
+
+.experience-details {
+    flex: 1;
+}
+
+.experience-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.experience-company {
+    font-size: 1.2rem;
+    color: var(--muted-text);
+    margin-bottom: var(--spacing-md);
+}
+
+.experience-description {
+    font-size: 1.1rem;
+    max-width: 700px;
+    color: var(--muted-text);
+}
+
+/* Contact Section Styles */
+.contact-section {
+    min-height: 50vh;
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+}
+
+.contact-container {
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xl);
+}
+
+.contact-buttons {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-button {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 1px solid var(--text-color);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.contact-button:hover {
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
+    transform: scale(1.03);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    .hero-content-grid {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .profile-picture {
+        width: 200px;
+        height: 267px; /* Maintain the same aspect ratio */
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hero-content-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-xl);
+    }
+    
+    .left-column, .center-column, .right-column {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .center-column {
+        order: 1;
+        margin-top: 0;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .skills-row {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+    
+    .left-column {
+        order: 2;
+    }
+    
+    .right-column {
+        order: 3;
+    }
+    
+    .intro-text-container {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .intro-text {
+        max-width: 600px;
+    }
+    
+    .hero-service-wrapper {
+        align-items: center;
+    }
+    
+    .experience-item {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .experience-year {
+        margin-bottom: var(--spacing-sm);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .global-padding {
+        padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+    }
+    
+    .profile-picture {
+        width: 180px;
+        height: 240px; /* Maintain the same aspect ratio */
+    }
+    
+    .intro-text {
+        font-size: 1.1rem;
+    }
+    
+    .hero-service > div:first-child {
+        text-align: center;
+    }
+    
+    .hero-service-items {
+        align-items: center;
+    }
+    
+    .hero-name {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .experience-title {
+        font-size: 1.5rem;
+    }
+    
+    .contact-buttons {
+        flex-direction: column;
+    }
+    
+    .contact-button {
+        width: 100%;
+    }
+    
+    /* Adjust stained glass effects for mobile */
+    .stained-glass-effect:hover::before,
+    .stained-glass-effect:hover::after {
+        animation-duration: 6s; /* Slower animation on mobile */
+    }
+}
